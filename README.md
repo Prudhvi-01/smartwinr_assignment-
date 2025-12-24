@@ -18,7 +18,7 @@ LiveConnect is a full-stack real-time chat application built using the MERN stac
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 Frontend:
 - React
@@ -98,4 +98,5 @@ http://localhost:5173
 ##  Notes
 
 This project was developed as part of a Real-Time Chat Application assignment to demonstrate WebSocket-based communication, database persistence, and full-stack development using MERN stack.
+
 
