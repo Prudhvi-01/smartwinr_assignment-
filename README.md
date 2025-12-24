@@ -4,7 +4,7 @@ LiveConnect is a full-stack real-time chat application built using the MERN stac
 
 ---
 
-## 🚀 Features
+##  Features
 
 - User Authentication (Signup & Login using JWT)
 - Real-time messaging using Socket.IO
@@ -38,17 +38,17 @@ Media Storage:
 
 ---
 
-## ⚙️ Project Setup
+##  Project Setup
 
-### 1️⃣ Clone the repository
+###  Clone the repository
 ```bash
-git clone https://github.com/<your-username>/liveconnect-chat-app.git
+git clone https://github.com/Prudhvi-01/smartwinr_assignment.git
 cd liveconnect-chat-app
 ```
 
 ---
 
-### 2️⃣ Backend Setup
+###  Backend Setup
 ```bash
 cd backend
 npm install
@@ -62,7 +62,7 @@ http://localhost:5000
 
 ---
 
-### 3️⃣ Frontend Setup
+###  Frontend Setup
 ```bash
 cd frontend
 npm install
@@ -76,7 +76,7 @@ http://localhost:5173
 
 ---
 
-## 🧪 How to Test
+##  How to Test
 
 1. Open two browsers or two incognito tabs
 2. Register two users
@@ -87,16 +87,15 @@ http://localhost:5173
 
 ---
 
-## 📸 Screenshots
+##  ScreenShots:
 
-(Add screenshots here)
-- Login Page
-- Private Chat
-- Group Chat
-- Media/File Sharing
+<img width="1920" height="1200" alt="Screenshot 2025-12-24 132030" src="https://github.com/user-attachments/assets/1a858616-6835-4325-aba2-f70b535bb77a" />
+<img width="1919" height="1199" alt="Screenshot 2025-12-24 131953" src="https://github.com/user-attachments/assets/bb53afd1-94e9-47f2-a306-48dcd975fa0b" />
+<img width="1919" height="1199" alt="Screenshot 2025-12-24 131847" src="https://github.com/user-attachments/assets/97ad9c85-bcb2-4f69-b566-9021cf6dd43a" />
 
----
 
-## 📌 Notes
+
+##  Notes
 
 This project was developed as part of a Real-Time Chat Application assignment to demonstrate WebSocket-based communication, database persistence, and full-stack development using MERN stack.
+
