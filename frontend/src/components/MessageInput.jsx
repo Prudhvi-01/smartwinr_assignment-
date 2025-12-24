@@ -7,7 +7,13 @@ const MessageInput = () => {
   const [text, setText] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const fileInputRef = useRef(null);
-  const { sendMessage } = useChatStore();
+
+  const {
+    sendMessage,
+    sendGroupMessage,     // ✅ NEW
+    selectedUser,
+    selectedGroup,        // ✅ NEW
+  } = useChatStore();
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -33,10 +39,21 @@ const MessageInput = () => {
     if (!text.trim() && !imagePreview) return;
 
     try {
-      await sendMessage({
-        text: text.trim(),
-        image: imagePreview,
-      });
+      // ✅ GROUP MESSAGE
+      if (selectedGroup) {
+        await sendGroupMessage(selectedGroup.groupId, {
+          text: text.trim(),
+          image: imagePreview,
+        });
+      }
+
+      // ✅ PRIVATE MESSAGE
+      if (selectedUser) {
+        await sendMessage({
+          text: text.trim(),
+          image: imagePreview,
+        });
+      }
 
       // Clear form
       setText("");
@@ -74,10 +91,13 @@ const MessageInput = () => {
           <input
             type="text"
             className="w-full input input-bordered rounded-lg input-sm sm:input-md"
-            placeholder="Type a message..."
+            placeholder={
+              selectedGroup ? "Message group..." : "Type a message..."
+            }
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
+
           <input
             type="file"
             accept="image/*"
@@ -89,12 +109,13 @@ const MessageInput = () => {
           <button
             type="button"
             className={`hidden sm:flex btn btn-circle
-                     ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
+              ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`}
             onClick={() => fileInputRef.current?.click()}
           >
             <Image size={20} />
           </button>
         </div>
+
         <button
           type="submit"
           className="btn btn-sm btn-circle"
@@ -106,4 +127,5 @@ const MessageInput = () => {
     </div>
   );
 };
+
 export default MessageInput;

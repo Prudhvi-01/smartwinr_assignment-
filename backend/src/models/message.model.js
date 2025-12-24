@@ -7,14 +7,27 @@ const messageSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+
+    // private chat
     receiverId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
+
+    // group chat
+    groupId: {
+      type: String,
+    },
+
+    isGroup: {
+      type: Boolean,
+      default: false,
+    },
+
     text: {
       type: String,
     },
+
     image: {
       type: String,
     },
@@ -22,6 +35,8 @@ const messageSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Message = mongoose.model("Message", messageSchema);
+// ✅ SAFE MODEL EXPORT (prevents overwrite)
+const Message =
+  mongoose.models.Message || mongoose.model("Message", messageSchema);
 
 export default Message;
